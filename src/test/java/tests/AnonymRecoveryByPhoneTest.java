@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AnonymRecoveryByPhoneTest extends BaseTest {
     private static LoginPage loginPage;
@@ -33,5 +35,12 @@ public class AnonymRecoveryByPhoneTest extends BaseTest {
         anonymRecoveryPage = new AnonymRecoveryPage();
         anonymRecoveryPage.goToRecoveryByPhone();
         recoveryByPhone = new RecoveryByPhone();
+
+        String countryCode = recoveryByPhone.selectCountryByName("Бразилия");
+        assertEquals("+55", countryCode, "Код страны не совпадает с содержимым");
+
+        recoveryByPhone.getCode();
+        //Проверка наличия сообщения об ошибке
+        assertTrue(recoveryByPhone.isErrorMessageVisible(), "Сообщение об ошибке входа не отображается");
     }
 }
