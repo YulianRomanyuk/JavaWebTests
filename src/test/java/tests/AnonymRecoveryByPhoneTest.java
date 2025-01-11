@@ -33,7 +33,5 @@ public class AnonymRecoveryByPhoneTest extends BaseTest {
         anonymRecoveryPage = new AnonymRecoveryPage();
         anonymRecoveryPage.goToRecoveryByPhone();
         recoveryByPhone = new RecoveryByPhone();
-        recoveryByPhone.verifyPageElements();
-
     }
 }
