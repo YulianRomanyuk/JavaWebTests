@@ -24,6 +24,9 @@ public class LoginPage extends BasePage {
     //Локатор для эллемента с сообщением об ошибке входа
     private SelenideElement errorMessage = $(".input-e.login_error");
 
+    //Локатор для перехода к восстановлению
+    private SelenideElement goToRecoveryButton = $("[value='st.go_to_recovery']");
+
     {
         verifyPageElements();
     }
@@ -72,6 +75,11 @@ public class LoginPage extends BasePage {
         passwordField.shouldBe(visible).setValue(password);
         passwordField.shouldBe(visible).click();
         loginButton.shouldBe(visible).click();
+    }
+
+    @Step("Нажимаем восстановить профиль")
+    public void goToRecovery() {
+        goToRecoveryButton.shouldBe(visible).click();
     }
 
 
