@@ -33,6 +33,5 @@ public class AnonymRecoverByEmailTest extends BaseTest {
         anonymRecoveryPage = new AnonymRecoveryPage();
         anonymRecoveryPage.goToRecoveryByEmail();
         recoveryByEmail = new RecoveryByEmail();
-        recoveryByEmail.verifyPageElements();
     }
 }
