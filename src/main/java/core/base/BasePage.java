@@ -20,6 +20,9 @@ public abstract class BasePage {
         searchField.shouldBe(visible).setValue(query).pressEnter();
     }
 
+    @Step("Заполняем поиск по сайту с запросом {query}")
+    public void indicateSearch(String query) { searchField.shouldBe(visible).setValue(query); }
+
     @Step("Открываем VK Services")
     public void openVkServices() {
         vkServices.shouldBe(visible).click();
