@@ -11,14 +11,14 @@ public class LoginByQrCodeTest extends BaseTest {
     private static LoginPage loginPage;
 
     @BeforeEach
-    public void prepare(){
+    public void prepare() {
         open(baseUrl);
         loginPage = new LoginPage();
     }
 
     @Test
     public void loginByQrTest() {
-        //Попытка входа с некорректными данными
+        //Попытка входа по QR
         loginPage.openQrLogin();
     }
 }
