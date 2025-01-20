@@ -1,15 +1,13 @@
 package tests;
 
-import com.codeborne.selenide.SelenideElement;
+
 import core.base.BaseTest;
 import core.pages.GroupPage;
 import core.pages.LoginPage;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SearchGroupTest extends BaseTest {
