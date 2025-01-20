@@ -1,4 +1,4 @@
-package core.pages;
+package core.pages.web;
 
 import com.codeborne.selenide.SelenideElement;
 import core.base.BasePage;
@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class RecoveryByEmail extends BasePage {
+public class RecoveryByEmailPage extends BasePage {
     private SelenideElement codeButton = $("[data-l='t,submit']");
 
     {
