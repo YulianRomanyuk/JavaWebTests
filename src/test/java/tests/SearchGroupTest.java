@@ -1,7 +1,6 @@
 package tests;
 
 import com.codeborne.selenide.SelenideElement;
-import core.base.BasePage;
 import core.base.BaseTest;
 import core.pages.GroupPage;
 import core.pages.LoginPage;
@@ -14,19 +13,19 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SearchGroupTest extends BaseTest {
-    private static BasePage basePage;
+    private static LoginPage loginPage;
     private static GroupPage groupPage;
 
     @BeforeEach
     public void prepare() {
         open(baseUrl);
-        basePage = new LoginPage();
+        loginPage = new LoginPage();
     }
 
     @Test
     @Step("Вводим параметры поиска")
     public void searchGroupTest() {
-        basePage.indicateSearch("Тестировщик");
+        loginPage.indicateSearch("Тестировщик");
         SelenideElement resultSearch = $(By.xpath("(//a[@class='suggest-item__zd7xg'][contains(text(),'Тестировщик')])[4]"));
         resultSearch.click();
         groupPage = new GroupPage();
