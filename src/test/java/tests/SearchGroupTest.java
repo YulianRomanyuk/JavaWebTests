@@ -26,8 +26,7 @@ public class SearchGroupTest extends BaseTest {
     @Step("Вводим параметры поиска")
     public void searchGroupTest() {
         loginPage.indicateSearch("Тестировщик");
-        SelenideElement resultSearch = $(By.xpath("(//a[@class='suggest-item__zd7xg'][contains(text(),'Тестировщик')])[4]"));
-        resultSearch.click();
+        loginPage.resultSearch();
         groupPage = new GroupPage();
     }
 }
