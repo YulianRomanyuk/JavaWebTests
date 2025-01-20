@@ -2,6 +2,7 @@ package core.base;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -14,6 +15,7 @@ public abstract class BasePage {
     protected SelenideElement vkServices = $("[data-l='t,vk_ecosystem']");
     protected SelenideElement acceptCookiesButton = $(".cb_accept");
     protected SelenideElement acceptPrivacyButton = $(".cmptxt_bth_yes");
+    protected SelenideElement resultSearch = $(By.xpath("(//a[@class='suggest-item__zd7xg'][contains(text(),'Тестировщик')])[4]"));
 
     @Step("Выполняем поиск по сайту с запросом {query}")
     public void search(String query) {
@@ -41,6 +43,11 @@ public abstract class BasePage {
     @Step("Принимаем политику конфеденциальности")
     public void acceptPrivacy() {
         acceptPrivacyButton.shouldBe(visible).click();
+    }
+
+    @Step("Выбираем результат из списка")
+    public void resultSearch() {
+        resultSearch.shouldBe(visible).click();
     }
 
 }
