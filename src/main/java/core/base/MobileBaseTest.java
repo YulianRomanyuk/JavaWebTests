@@ -14,7 +14,7 @@ public class MobileBaseTest extends AbstractBaseTest {
         //Настройка эмуляции мобильного устройства
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setExperimentalOption("mobileEmulation",
-                Map.of("deviceName", "iPhone X") //Указываем устройство
+                Map.of("deviceName", "iPhone 12 Pro") //Указываем устройство
         );
         //Применяем настройки ChromeOptions
         Configuration.browserCapabilities = chromeOptions;
